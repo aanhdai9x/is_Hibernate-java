@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- SQL Dialect -->
+		<property name="show_sql">true</property> <!-- SQL dialect -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> <!-- Database Connection Settings -->
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=TestHibernate</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.password">root</property>
+		<!-- <property name="hbm2ddl.auto">update</property> -->
+		
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property> <!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property> <!-- Mapping With Model Class Containing Annotations -->
+		<mapping class="com.cmc.pojo.Order" />
+		<mapping class="com.cmc.pojo.OrderDetail" />
+	</session-factory>
+</hibernate-configuration>
+
